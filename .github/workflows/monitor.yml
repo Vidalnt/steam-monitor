@@ -64,8 +64,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh issue create --title "Patterns missing for new Steam build" \
-            --body-file fails.txt || true
+          if [ "$(gh issue list --search 'Patterns missing for new Steam build in:title' --state open --json number --jq length)" -eq 0 ]; then
+            gh issue create --title "Patterns missing for new Steam build" \
+              --body-file fails.txt || true
+          else
+            echo "open issue already exists, appending run log"
+          fi
 
       - name: Publish verified builds
         if: steps.fetch.outputs.skip != 'true' && steps.verify.outputs.failed != 'true'
@@ -79,3 +83,17 @@ jobs:
           git -C steam-monitor -c user.name="steam-monitor" -c user.email="steam-monitor@local" \
             commit -m "Add Steam build(s)" || true
           git -C steam-monitor push || true
+
+      # GitHub silently disables cron schedules after 60 days without repo
+      # activity. During quiet Steam periods this workflow commits nothing,
+      # so push an empty heartbeat before the clock runs out.
+      - name: Heartbeat keepalive
+        if: steps.fetch.outputs.skip == 'true'
+        run: |
+          LAST=$(git -C steam-monitor log -1 --format=%ct)
+          NOW=$(date +%s)
+          if [ $(( (NOW - LAST) / 86400 )) -ge 50 ]; then
+            git -C steam-monitor -c user.name="steam-monitor" -c user.email="steam-monitor@local" \
+              commit --allow-empty -m "Heartbeat keepalive" || true
+            git -C steam-monitor push || true
+          fi
