@@ -18,12 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout monitor
-        uses: actions/checkout@4d1a3fbbd884a47717e6c19a55ee91cbd5cdb0b50 # v4.2.2
+        uses: actions/checkout@v4
         with:
           path: steam-monitor
 
       - name: Setup Python
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
