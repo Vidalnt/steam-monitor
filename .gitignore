@@ -1,0 +1,6 @@
+bins/
+__pycache__/
+.pytest_cache/
+*.log
+new_builds.txt
+skips.txt

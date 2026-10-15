@@ -1,0 +1,112 @@
+[
+  {
+    "name": "TraceIPC",
+    "sig": "0F 45 F8 85 ED",
+    "optional": false
+  },
+  {
+    "name": "CAPIJob::SendAndRecv",
+    "sig": "8B 7C 24 ?? FF 76 ?? FF 76",
+    "optional": false
+  },
+  {
+    "name": "CAppDataCache::BParseResponseMessage",
+    "sig": "8B 77 ?? 39 46",
+    "optional": false
+  },
+  {
+    "name": "CWebSocketConnection::BBuildAndAsyncSendFrame",
+    "sig": "89 C6 85 D2 78",
+    "optional": false
+  },
+  {
+    "name": "CSteamEngine::GetServerPipe",
+    "sig": "0F B7 CA 31 C0 3B 4B",
+    "optional": false
+  },
+  {
+    "name": "CSteamEngine::SetAppIdForCurrentPipe",
+    "sig": "E8 ?? ?? ?? ?? 83 C4 ?? 8B 45 ?? 85 C0 75 ?? 31 FF",
+    "optional": false
+  },
+  {
+    "name": "CSteamEngine::ProcessIPCFrame",
+    "sig": "5E C3 FF 74 24",
+    "optional": false
+  },
+  {
+    "name": "CSteamEngine::m_pUser",
+    "sig": "8B 80 ?? ?? ?? ?? FF 75 ?? ?? ?? ?? 56 FF 75",
+    "optional": false
+  },
+  {
+    "name": "CUser::CheckAppOwnership",
+    "sig": "0F 94 C2 08 51",
+    "optional": false
+  },
+  {
+    "name": "CUser::GetSubscribedApps",
+    "sig": "89 75 ?? 0F 29 45",
+    "optional": false
+  },
+  {
+    "name": "CUser::PostCallback",
+    "sig": "E8 ?? ?? ?? ?? 8B 75 ?? 89 D8",
+    "optional": false
+  },
+  {
+    "name": "CUser::PostCallbackToAppId",
+    "sig": "84 C0 0F 45 F8 89 F8",
+    "optional": false
+  },
+  {
+    "name": "CUser::SpawnGameId",
+    "sig": "84 C9 0F 45 45",
+    "optional": false
+  },
+  {
+    "name": "CUser::UpdateAppOwnershipTicket",
+    "sig": "52 57 89 DF FF 75",
+    "optional": false
+  },
+  {
+    "name": "CUserAppManager::BuildDepotDependency",
+    "sig": "E8 ?? ?? ?? ?? 83 C4 ?? 84 C0 74 ?? 8B 45 ?? 85 C0 89 45",
+    "optional": true
+  },
+  {
+    "name": "CCMConnection::RecvPkt",
+    "sig": "55 89 E5 57 E8 ?? ?? ?? ?? 81 C7 ?? ?? ?? ?? 56 53 83 EC 34 6A 01 FF 75 0C 89 FB E8 ?? ?? ?? ??",
+    "optional": true
+  },
+  {
+    "name": "LoadDepotDecryptionKey",
+    "sig": "55 57 56 53 E8 ?? ?? ?? ?? 81 C3 ?? ?? ?? ?? 83 EC 24 8B 44 24 44 8B 6C 24 38 8B 7C 24 3C 8B 74 24 40 89 44 24 10 8B 44 24 48 89 44 24 14",
+    "optional": true
+  },
+  {
+    "name": "CPackageInfo::GetPackageInfo",
+    "sig": "E8 ?? ?? ?? ?? 05 ?? ?? ?? ?? 55 89 E5 57 56 53 83 EC 3C 8B 55 14 8B 75 0C 89 45 CC 8B 45 10 89 55 DC 89 45 D8 8B 45 08",
+    "optional": true
+  },
+  {
+    "name": "CUser::MarkLicenseAsChanged",
+    "sig": "55 57 56 53 E8 ?? ?? ?? ?? 81 C3 ?? ?? ?? ?? 83 EC 2C 8B 74 24 40 8B 44 24 48 8B BE ?? 1B 00 00 88 44 24 1C 8D 86 ?? 1A 00 00",
+    "optional": true
+  },
+  {
+    "name": "CUser::ProcessPendingLicenseUpdates",
+    "sig": "55 E8 ?? ?? ?? ?? 81 C5 ?? ?? ?? ?? 57 56 53 83 EC 0C 8B 7C 24 20 8B B7 ?? 1B 00 00 83 EE 01 79 0F EB 5D",
+    "optional": true
+  },
+  {
+    "name": "CUtlMemory::Grow",
+    "sig": "E8 ?? ?? ?? ?? 8B 85 04 FF FF FF 83 C4 10 8B 40 54 89 85 FC FE FF FF",
+    "optional": true
+  },
+  {
+    "name": "IClientUtils::m_PipeIndex",
+    "sig": "8B 91 ?? ?? ?? ?? 83 F8 FF 74 ?? 8B 89 ?? ?? ?? ?? EB ?? ?? ?? ?? 8B 00 83 F8 FF 74 ?? 8D 04 ?? 8D 04 ?? 3B 50",
+    "optional": false
+  }
+]
